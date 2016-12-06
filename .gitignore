@@ -89,3 +89,4 @@ ENV/
 .ropeproject
 
 *.sw[a-z]
+*.db
