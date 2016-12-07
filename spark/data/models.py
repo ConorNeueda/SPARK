@@ -43,6 +43,7 @@ class User(db.Model):
     def get_pword(self):
         return self.password
 
+
 def user_exists(uname):
     test = User.query.filter_by(username=uname).first()
     if test is not None:
