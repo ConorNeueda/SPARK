@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Make sure the <html> tag is set to the .full CSS class. Change the background image in the full.css file. -->
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Spark - Welcome</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="{{ url_for('static',filename='css/bootstrap.min.css') }}" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="{{ url_for('static',filename='css/landing-page.css') }}" rel="stylesheet">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="57x57" href="{{ url_for('static',filename='img/favicons/apple-touch-icon-57x57.png') }}">
+    <link rel="apple-touch-icon" sizes="60x60" href="{{ url_for('static',filename='img/favicons/apple-touch-icon-60x60.png') }}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ url_for('static',filename='img/favicons/apple-touch-icon-72x72.png') }}">
+    <link rel="apple-touch-icon" sizes="76x76" href="{{ url_for('static',filename='img/favicons/apple-touch-icon-76x76.png') }}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ url_for('static',filename='img/favicons/apple-touch-icon-114x114.png') }}">
+    <link rel="apple-touch-icon" sizes="120x120" href="{{ url_for('static',filename='img/favicons/apple-touch-icon-120x120.png') }}">
+    <link rel="apple-touch-icon" sizes="144x144" href="{{ url_for('static',filename='img/favicons/apple-touch-icon-144x144.png') }}">
+    <link rel="apple-touch-icon" sizes="152x152" href="{{ url_for('static',filename='img/favicons/apple-touch-icon-152x152.png') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static',filename='img/favicons/apple-touch-icon-180x180.png') }}">
+    <link rel="icon" type="image/png" href="{{ url_for('static',filename='img/favicons/favicon-32x32.png') }}" sizes="32x32">
+    <link rel="icon" type="image/png" href="{{ url_for('static',filename='img/favicons/favicon-194x194.png') }}" sizes="194x194">
+    <link rel="icon" type="image/png" href="{{ url_for('static',filename='img/favicons/favicon-96x96.png') }}" sizes="96x96">
+    <link rel="icon" type="image/png" href="{{ url_for('static',filename='img/favicons/android-chrome-192x192.png') }}" sizes="192x192">
+    <link rel="icon" type="image/png" href="{{ url_for('static',filename='img/favicons/favicon-16x16.png') }}" sizes="16x16">
+    <link rel="manifest" href="{{ url_for('static',filename='img/favicons/manifest.json') }}">
+    <link rel="mask-icon" href="{{ url_for('static',filename='img/favicons/safari-pinned-tab.svg') }}" color="#19ace4">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="{{ url_for('static',filename='img/favicons/mstile-144x144.png') }}">
+    <meta name="theme-color" content="#ffffff">
+    <!-- /Favicons -->
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+    </head>
+
+    <body>
+        <video autoplay loop id="video-background" muted><source src="{{ url_for('static',filename='img/Spark-Video-BG.mp4') }}" type="video/mp4"></video>
+          <!-- Page Content -->
+          <div class="container">
+          <div class="custom-container">
+            <div class="Spark-Logo"><img src="{{ url_for('static',filename='img/Spark-blue-white-text.svg') }}"></div>
+            <div class="row">
+                <!--<div class="quote">“</div>-->
+                <div class="wrap">
+                    <!--<p>Spark - Share Innovation</p>-->
+                    <div class="quote-block">
+                        <h2 class="quotes">It isn't all over; everything has not been invented; the human adventure is just beginning.</h2>
+                        <h2 class="quotes">The greatest danger for most of us is not that our aim is too high and we miss it, but that it is too low and we reach it.</h2>
+                        <h2 class="quotes">Innovation is anything, but business as usual.</h2>
+                        <h2 class="quotes">They always say time changes things, but you actually have to change them yourself.</h2>
+                        <h2 class="quotes">The best way to have a good idea is to have a lot of ideas.</h2>
+                    </div>
+                    <img src="{{ url_for('static',filename='img/slack-button.png') }}" />
+                </div>
+            </div>
+            <!-- /.row -->
+            </div> <!-- /.custom-container -->
+        </div>
+        <!-- /.container -->
+
+        <!-- jQuery -->
+        <script src="{{ url_for('static',filename='js/jquery.js') }}"></script>
+        <!-- Bootstrap Core JavaScript -->
+        <script src="{{ url_for('static',filename='js/bootstrap.min.js') }}"></script>
+        <script type="{{ url_for('static',filename='text/javascript') }}">
+            (function() {
+
+                var quotes = $(".quotes");
+                var quoteIndex = -1;
+
+                function showNextQuote() {
+                    ++quoteIndex;
+                    quotes.eq(quoteIndex % quotes.length)
+                    .fadeIn(2000)
+                    .delay(2000)
+                    .fadeOut(2000, showNextQuote);
+                }
+
+                showNextQuote();
+
+            })();
+        </script>
+
+    </body>
+
+    </html>
