@@ -6,7 +6,7 @@ app.config.from_object('spark.config')
 db = SQLAlchemy(app)
 
 from spark.data.models import User
-from spark.data.models import NewIdea
+from spark.data.models import Ideas
 
 db.create_all()
 

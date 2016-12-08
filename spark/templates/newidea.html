@@ -1,3 +1,158 @@
-<form action="/echo" method="POST"><input name="idea">
-    <input type="submit" value="Submit Idea">
-</form>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<title>Spark - Share Innovation</title>
+	
+	<!-- Bootstrap core CSS -->
+
+	<link href="{{ url_for('static',filename='css/bootstrap.css') }}" rel="stylesheet">
+	<!-- Sidebar CSS -->
+	<!-- <link href="{{ url_for('static',filename='sidebar/css/simple-sidebar.css') }}" rel="stylesheet">
+	<!-- Custom CSS -->
+	<link rel="stylesheet" href="{{ url_for('static',filename='css/spark.css') }}">
+	<!-- Footer Reveal CSS -->
+	<!-- <link rel="stylesheet" href="{{ url_for('static',filename='css/footer-reveal/main.css') }}">
+	<!-- Footer Reveal CSS -->
+	<!-- <link rel="stylesheet" href="{{ url_for('static',filename='css/footer-reveal/normalize.css') }}">
+	<!-- Message Box CSS -->
+	<link rel="stylesheet" href="{{ url_for('static',filename='css/message-box.css') }}">
+	<!-- Modal CSS -->
+	<!-- <link rel="stylesheet" href="{{ url_for('static',filename='css/modal.scss') }}">
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+	<!-- FontAwesome -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+	<!-- FontAwesome: cache buster included for older version of Safari -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css?v=1234">
+
+	<!-- Favicons -->
+	<link rel="apple-touch-icon" sizes="57x57" href="{{ url_for('static',filename='img/favicons/apple-touch-icon-57x57.png') }}">
+	<link rel="apple-touch-icon" sizes="60x60" href="{{ url_for('static',filename='img/favicons/apple-touch-icon-60x60.png') }}">
+	<link rel="apple-touch-icon" sizes="72x72" href="{{ url_for('static',filename='img/favicons/apple-touch-icon-72x72.png') }}">
+	<link rel="apple-touch-icon" sizes="76x76" href="{{ url_for('static',filename='img/favicons/apple-touch-icon-76x76.png') }}">
+	<link rel="apple-touch-icon" sizes="114x114" href="{{ url_for('static',filename='img/favicons/apple-touch-icon-114x114.png') }}">
+	<link rel="apple-touch-icon" sizes="120x120" href="{{ url_for('static',filename='img/favicons/apple-touch-icon-120x120.png') }}">
+	<link rel="apple-touch-icon" sizes="144x144" href="{{ url_for('static',filename='img/favicons/apple-touch-icon-144x144.png') }}">
+	<link rel="apple-touch-icon" sizes="152x152" href="{{ url_for('static',filename='img/favicons/apple-touch-icon-152x152.png') }}">
+	<link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static',filename='img/favicons/apple-touch-icon-180x180.png') }}">
+	<link rel="icon" type="image/png" href="{{ url_for('static',filename='img/favicons/favicon-32x32.png') }}" sizes="32x32">
+	<link rel="icon" type="image/png" href="{{ url_for('static',filename='img/favicons/favicon-194x194.png') }}" sizes="194x194">
+	<link rel="icon" type="image/png" href="{{ url_for('static',filename='img/favicons/favicon-96x96.png') }}" sizes="96x96">
+	<link rel="icon" type="image/png" href="{{ url_for('static',filename='img/favicons/android-chrome-192x192.png') }}" sizes="192x192">
+	<link rel="icon" type="image/png" href="{{ url_for('static',filename='img/favicons/favicon-16x16.png') }}" sizes="16x16">
+	<link rel="manifest" href="{{ url_for('static',filename='img/favicons/manifest.json') }}">
+	<link rel="mask-icon" href="{{ url_for('static',filename='img/favicons/safari-pinned-tab.svg') }}" color="#19ace4">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="{{ url_for('static',filename='img/favicons/mstile-144x144.png') }}">
+	<meta name="theme-color" content="#ffffff">
+	<!-- /Favicons -->
+
+	<!--[if lt IE 9]>
+    	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    	<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    	<![endif]-->
+    </head>
+    <body>
+    	<!-- Fixed navbar -->
+        <nav class="navbar navbar-default navbar-fixed-top drop-shadow curved curved-hz-2">
+            <div class="nav-elements-wrap">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#"><img src="{{ url_for('static',filename='img/Spark.svg') }}" style="width:30px;"></a>
+                </div>
+
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="myprofile.html">My Profile</a></li>
+                        <li class="active"><a href="share-idea.html">Share an Idea</a></li>
+                      
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Everyone's Ideas <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li class="dropdown-header">Sort By</li>
+                                <li><a href="everyones-ideas.html">Latest</a></li>
+                                <li><a href="#">Popular</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li class="dropdown-header">Filter By Status</li>
+                                <li><a href="#">Approved</a></li>
+                                <li><a href="#">Flagged</a></li>
+                                <li><a href="#">Not Taken Forward</a></li>
+                            </ul>
+                        </li>
+                </ul>
+                <!-- MENU ITEMS / FIXED RIGHT -->
+                    
+                    <ul class="nav navbar-right">
+                        <li class="powered-by-Neueda"><a href="http://www.neueda.com" target="_blank"><p>Powered By</p><img src="{{ url_for('static',filename='img/Neueda-white.png') }}"></a></li>
+                    </ul>
+                    
+            </div><!--/.nav-collapse -->
+        </div>
+
+    </nav>
+
+    <div id="container">
+    	<div class="body-wrap">
+
+    			<!--
+    			<div class="modal-frame">
+    				<div class="modal">
+    					<div class="modal-inset">
+    						<div class="button close"><i class="fa fa-close"></i></div>
+
+    						<div class="modal-body">
+    							<h3>Such Modal, Much Animate!</h3>
+    							<p>Nothing groundbreaking, but I hope you enjoyed <br /> the physics for the open/close animation =).</p>
+    							<p class="ps">**I know the SASS is a bit messy, I did this on the fly and for fun <br /> and w.e. I DO WHAT I WANT!!</p>
+    						</div>
+    					</div>
+    				</div>
+    			</div>
+
+    			<div class="modal-overlay"></div>
+    		-->
+
+    		<h1>Got an idea?</h1>
+    		<h2>Share it on Spark.</h2>
+			<form action="/echo" method="POST">
+    		<div id="container1">
+
+    			<span class="input">
+    				<input maxlength="100" type="text" class="input__field" name="idea_summary" id="idea_summary" />
+    				<label for="idea_summary" class="input__label">
+    					<span class="input__label-content">Your idea summary.</span>
+    				</label>
+    			</span>
+
+    			<span class="input message">
+    				<textarea class="input__field" name="idea" id="idea"></textarea>
+    				<label for="idea" class="input__label">
+    					<span class="input__label-content">Tell us more about it.</span>
+    				</label>
+    			</span>
+
+    			<div class="switch-post-container">
+    			<input class="input-button open" type="submit" value="Share">
+    			<div class="spacer"></div>
+    		</div>
+
+    	</div> <!-- /id=container -->
+		</form>
+    </div> <!-- /body-wrap -->
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+<script src="{{ url_for('static',filename='js/bootstrap.min.js') }}"></script>
+<script src="{{ url_for('static',filename='js/spark.js') }}"></script>
+</body>
+</html>

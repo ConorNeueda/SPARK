@@ -1,0 +1,98 @@
+/*!
+ * Start Bootstrap - The Big Picture (http://startbootstrap.com/)
+ * Copyright 2013-2016 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
+ */
+
+ body {
+ 	margin: 0;
+ 	padding: 0;
+ 	background: url(../img/Spark-Fallback-BG.jpg) no-repeat center center fixed; 
+ 	-webkit-background-size: cover;
+ 	-moz-background-size: cover;
+ 	-o-background-size: cover;
+ 	background-size: cover;
+ }
+
+ #video-background {
+/*  making the video fullscreen  */
+  position: fixed;
+  right: 0; 
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+  width: auto; 
+  height: auto;
+  z-index: -100;
+}
+
+.custom-container{
+	margin: 50px; 
+}
+
+ h2{
+ 	font-family: 'Montserrat', sans-serif;
+ 	color: #fff;
+ 	font-size: 50px; 
+ }
+
+ .wrap p{
+ 	margin-top: 5px; 
+ 	font-family: 'Montserrat', sans-serif;
+ 	color:#fff; 
+ }
+
+ .Spark-Logo{
+ 	display: inline-block;
+ 	width: 100%; 
+ 	text-align:center;
+ 	margin-bottom: 30px
+ }
+
+ .Spark-Logo img{
+ 	width: 80px; 
+ }
+
+ .wrap{
+ 	display: inline-block;
+ 	height: auto;
+ 	width: 100%;
+ 	text-align: center;
+ }
+
+ .powered-by-Neueda-cover p{
+	font-size: 10px;
+	font-weight: 700; 
+	display:inline-block; 
+	color:#fff; 
+}
+
+.powered-by-Neueda-cover img{
+	width:80px; 
+	margin-left:10px; 
+	display:inline-block;
+}
+
+ .quotes {display: none;}
+
+
+ .quote-block{
+ 	height: 250px; 
+ }
+
+ @media (max-width: 750px) {
+
+ 	.row{
+ 		margin: 0 !important; 
+ 	}
+
+ 	h2{
+ 		font-size: 30px; 
+ 	}
+
+ 	.quote-block{
+ 	height: 360px; 
+ }
+
+ }
+ 

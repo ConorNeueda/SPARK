@@ -3,13 +3,15 @@ from werkzeug.security import generate_password_hash, \
     check_password_hash
 
 
-class NewIdea(db.Model):
+class Ideas(db.Model):
     id = db.Column(db.Integer, primary_key=True)
+    idea_summary = db.Column(db.Text)
     idea_text = db.Column(db.Text)
     vote = db.Column(db.Integer)
     user_id = db.Column(db.Integer) #, db.ForeignKey('user.id'))
 
-    def __init__(self, idea_text="", vote=0, user_id=1):
+    def __init__(self, idea_summary="", idea_text="", vote=0, user_id=1):
+        self.idea_summary = idea_summary
         self.idea_text = idea_text
         self.vote = vote
         self.user_id = user_id
